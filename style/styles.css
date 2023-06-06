@@ -1,0 +1,535 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-color: rgb(51, 51, 51);
+}
+
+header{
+    position: absolute;
+    top:0; left:0; right:0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    background-color: rgb(32, 32, 32);
+    color: white;
+}
+
+header .navbar a{
+    font-size: 16px;
+    padding: 0 1.5rem;
+    color: white;
+}
+
+header .navbar a:hover{
+    color: orangered;
+}
+
+.navbar ul li{
+    display: inline;
+    letter-spacing: 1px;
+}
+
+.home #myVideo {
+    position: absolute;
+    top: 0; right:0;
+    min-width: 80%;
+    height: 100vh;
+  }
+  
+.home, .projects, .about, .contact{
+    min-height: 100vh;
+}
+
+.home .content {
+    position: absolute;
+    top: 0;
+    margin-top: 15%; 
+    margin-left: 80px;
+    padding: 40px 15px;
+    width: 450px;
+    height: auto;
+    background: rgb(51, 51, 51);
+    font-family: 'Raleway', sans-serif;
+  }
+
+.home p{ 
+    font-size: 50px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.home #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid orangered;
+    background: orangered;
+    color: white;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  
+.home #myBtn:hover {
+    border: 1px solid white;
+  }
+
+.projects .title{
+    margin: 25px 0;
+    font-size: 65px;
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.projects .mySlide{
+    display: none;
+}
+
+.projects img{
+    vertical-align: middle;
+    width: 600px;
+    height: 340px;
+}
+
+.projects .slideshow-container{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    height: 340px;
+    background-color:  rgb(32, 32, 32);
+}
+
+.projects .split {
+    position: absolute;
+    top: 0;
+}
+  
+.projects .left {
+    left: 0;
+}
+
+.projects .right {
+    right: 0;
+    width: 400px;
+    text-align: center;
+}
+
+.projects .right p{
+    padding-top: 25px;
+    margin: 25%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 2px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.projects .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.projects .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.projects .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+.projects .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 15px 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.6s ease;
+  }
+
+.projects .active, .dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+}
+
+.about .title {
+    right: 0;
+    margin: 0 auto; 
+    padding: 30px 15px;
+    width: 100%;
+    height: auto;
+    background-color: rgba(255, 68, 0, 0.644);
+  }
+
+.about .title h2{ 
+    margin: 0 38%;
+    font-size: 55px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.about .content{
+    margin: 60px auto;
+    max-width: 900px;
+    height: auto;
+    background: rgb(32, 32, 32);
+    color: white;
+}
+
+.about .content p{
+    font-size: 20px;
+    padding: 70px 150px;
+}
+
+.contact h1{
+    font-size:65px;
+    padding:40px 20px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing:2px;
+    color: white;
+}
+.contact .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+.contact .row form{
+    flex: 1 1 40rem;
+    padding: 1.5rem 2.5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+    border: .1rem solid rgba(0,0,0,.1);
+    background: rgb(32, 32, 32);
+    max-width: 900px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.contact .row form .box{
+    padding: .8rem;
+    font-size: 1rem;
+    color: rgb(184, 184, 184);
+    text-transform: none;
+    background-color: rgb(51, 51, 51);
+    border: .1rem solid rgba(0,0,0,.1);
+    margin: .7rem 0;
+    width: 100%;
+    border-radius: 7px;
+}
+
+.contact .row form textarea{
+    height: 8rem;
+    resize: none;
+    font-family: 'Raleway', sans-serif;
+}
+
+.contact .row form .btn{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 30px;
+    margin: 14px auto;
+    background: orangered;
+    border: .1rem solid orangered;
+    color: white;
+    font-size: 1rem;
+    font-size: 18px;
+    letter-spacing: 1px;
+    cursor: pointer;   
+    border-radius: 7px; 
+}
+
+.contact .row form .btn:hover{
+    border: .1rem solid white;
+}
+
+.footer .up{
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    background-color: rgb(32, 32, 32);
+    color: white;
+    padding: none;
+    border-bottom: 0.2px solid #717171;
+}
+
+.footer .up p{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Rubik Mono One', sans-serif;
+}
+
+.footer .up .social{
+    display: inline-flex;
+}
+
+.footer .up .icon {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .up .icon a i{
+    font-size: 20px;
+    line-height: 30px;
+    cursor: pointer;
+    color: black;
+    height: 30px;
+    width: 30px;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer .up .facebook:hover a i{
+    background-color: #3B5999;
+    color: white;
+}
+
+.footer .up .instagram:hover a i{
+    background-color: #e1306c;
+    color: white;
+}
+
+.footer .up .linkedin:hover a i{
+    background-color: #0077B5;
+    color: white;
+}
+
+.footer .up .box-container{
+    font-family: 'Raleway', sans-serif;
+}
+
+.footer .up .box-container .box{
+    flex: 1 1 5rem; 
+    font-size: 13px;
+}
+
+.footer .up .box-container .box ul li a{
+    color: white;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.footer .up .box-container .box ul li a:hover{
+    color: orangered;
+}
+
+.footer .up .box-container .box ul li {
+    display: inline;
+    margin: 0 10px;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+}
+
+.footer .down{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    background-color: rgb(32, 32, 32);
+    color: #717171;
+    padding: none;
+    font-size: 12px;
+}
+
+.footer .down .box ul li {
+    display: inline;
+    margin: 0 10px;
+    color: #717171;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1306px){
+    html{
+        font-size: 15px;
+    }
+    header{
+        padding: 1.5rem 1rem;
+    }
+    .projects .title{
+        font-size: 55px;
+    }
+    .about .title h2{
+        font-size: 35px;
+        margin: 0 36%;
+    }
+    .footer .box-container{
+        gap: 250px;
+    }
+}
+
+@media (max-width:990px){
+    html{
+        font-size: 15px;
+    }
+    header{
+        padding: 1.5rem 1rem;
+    }
+    .projects .title{
+        font-size: 50px;
+    }
+    .projects .slideshow-container{
+        max-width: 450px;
+        position: relative;
+        margin: auto;
+        height: 345px;
+    }
+    .projects img{
+        width: 450px;
+        height: auto;
+    }
+    .projects .left{
+        position: absolute;
+    }
+    .projects .right{
+        width: 450px;
+        margin-top: 130px;
+        font-size: 12px;
+    }
+    .about .title h2{
+        font-size: 35px;
+        margin: 0 36%;
+    }
+    .about .content{
+        width: 450px;
+        height: auto;
+    }
+    .about .content p{
+        font-size: 16px;
+        padding: 30px 70px;
+    }
+    .contact h1{
+        font-size:50px;
+    }
+    .contact .row form{
+        max-width: 450px;
+    }
+    .footer .box-container{
+        padding: 0px;
+    }
+    .footer .box-container{
+        gap: 150px;
+    }
+}
+
+@media (max-width:768px){
+    html{
+        font-size: 15px;
+    }
+    header{
+        padding: 1.5rem 1rem;
+    }
+    .home .content{
+        position: absolute;
+        top: 0;
+        padding: 10px 15px;
+    }
+    .projects .title{
+        margin: 25px 0;
+        font-size: 45px;
+    }
+    .projects .slideshow-container{
+        max-width: 400px;
+        position: relative;
+        margin: auto;
+        height: 345px;
+    }
+    .projects img{
+        width: 400px;
+        height: auto;
+    }
+    .projects .left{
+        position: absolute;
+    }
+    .projects .right{
+        width: 400px;
+        margin-top: 125px;
+        font-size: 12px;
+    }
+    .about .title h2{
+        font-size: 25px;
+        margin: 0 34%;
+    }
+
+    .about .content p{
+        width: 400px;
+        font-size: 16px;
+        padding: 30px 40px;
+    }
+    .footer .box-container{
+        gap: 100px;
+    }
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 15px;
+    }
+}
+

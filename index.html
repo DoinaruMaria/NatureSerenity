@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/styles.css">
+    <script src="https://kit.fontawesome.com/269e66fe56.js" crossorigin="anonymous"></script>
+    <title>NatureSerenity</title>
+</head>
+<body>
+    
+    <!-- header section starts -->
+
+    <header>
+        <h2>Logo</h2>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>  
+        </nav>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- home section starts -->
+
+    <section class="home" id="home">
+
+        <video autoplay muted loop id="myVideo">
+            <source src="images/videoplayback.webm" type="video/webm">
+          </video>
+
+        <div class="content">
+            <p>NATURE<br>SERENITY</p>
+            <br><br>
+
+            <button id="myBtn" onclick="myFunction()">Pause</button>
+        </div>
+        
+        <script>
+            var video = document.getElementById("myVideo");
+            var btn = document.getElementById("myBtn");
+            
+            function myFunction() {
+              if (video.paused) {
+                video.play();
+                btn.innerHTML = "Pause";
+              } else {
+                video.pause();
+                btn.innerHTML = "Play";
+              }
+            }
+            </script>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- project section starts -->
+
+    <section class="projects" id="projects">
+    
+        <h1 class="title">PROJECTS</h1>
+    
+        <div class="slideshow-container">
+
+            <div class="mySlide fade">
+                <div class="split left">
+                    <img src="images/1.jpg">
+                </div>
+
+                <div class="split right">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+
+            <div class="mySlide fade">
+                <div class="split left">
+                    <img src="images/2.jpg">
+                </div>
+
+                <div class="split right">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+
+            <div class="mySlide fade">
+                <div class="split left">
+                    <img src="images/3.jpg">
+                </div>
+
+                <div class="split right">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+        </div>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+    
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("mySlide");
+              let dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+            </script>
+    </section>
+
+    <!-- project section ends -->
+
+    <!-- about section starts -->
+
+    <section class="about" id="about"  style="background-image: url('images/bkg.jpg');">
+
+        <div class="title">
+            <h2>ABOUT US</h2>    
+        </div>
+
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+    </section>
+
+    <!-- about section ends -->
+
+    <!-- contact section starts -->
+
+    <section class="contact" id="contact">
+
+        <h1 class="heading"><span>CONTACT</span></h1>
+
+        <div class="row">
+            <form action="">
+                <input type="text" placeholder="Name" class="box">
+                <input type="email" placeholder="Email" class="box">
+                <input type="tel" placeholder="Number" class="box">
+                <textarea name="" class="box" placeholder="Message" id="" cols="30" rows="30"></textarea>
+                <br>
+                <input type="submit" value="Send Message" class="btn">
+            </form>
+        </div>
+
+    </section>
+
+
+    <!-- contact section ends -->
+
+    <!-- footer section starts -->
+
+    <section class="footer">
+
+        <div class="up">
+            <p>NatureSerenity</p>
+
+            <div class="box-container">
+                <div class="box">
+                    <ul>
+                        <li><a href="#home">HOME</a></li>
+                        <li><a href="#catalog">PROJECTS</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>                
+                </div>
+            </div>
+            
+            <div class="social">
+                <div class="icon facebook">
+                    <a><i class="fab fa-facebook-f"></i></a>
+                </div>
+                
+                <div class="icon instagram">
+                    <a><i class="fab fa-instagram"></i></a>
+                </div>
+
+                <div class="icon linkedin">
+                    <a><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>  
+
+        </div>
+
+
+
+        <div class="down">
+            <p>© 2023 Career Karma</p>
+
+            <div class="box">
+                <ul>
+                    <li>Telephone</li>
+                    <li>Mail</li>
+                    <li>Address</li>
+                </ul>   
+            </div>
+        </div>
+    </section>
+
+
+    <!-- footer section ends-->
+
+</body>
+</html>
